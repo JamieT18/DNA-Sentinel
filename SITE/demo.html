@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNA Hack Login Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+    }
+    form {
+      margin-bottom: 2em;
+      padding: 1em;
+      border: 1px solid #ccc;
+    }
+    input {
+      margin: 0.5em 0;
+      padding: 0.5em;
+      width: 100%;
+      max-width: 300px;
+    }
+    button {
+      padding: 0.5em 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>DNA Hack Login Demo</h1>
+  
+  <!-- Vulnerable Login Form -->
+  <section>
+    <h2>Vulnerable Login</h2>
+    <form onsubmit="vulnerableLogin(); return false;">
+      <label for="vulUsername">Username:</label><br>
+      <input id="vulUsername" type="text" placeholder="Enter username"><br>
+      <label for="vulPassword">Password (DNA sequence):</label><br>
+      <input id="vulPassword" type="text" placeholder="Enter DNA code"><br>
+      <button type="submit">Login</button>
+    </form>
+    <script>
+      function vulnerableLogin() {
+        var username = document.getElementById('vulUsername').value;
+        var password = document.getElementById('vulPassword').value;
+        // Vulnerable: Directly evaluating the password input.
+        try {
+          eval(password);  // Dangerous if password contains malicious code.
+          // Redirect to an "Access Granted" page if eval() succeeds.
+          window.location.href = "access-granted.html";
+        } catch(e) {
+          alert("Error: " + e);
+        }
+      }
+    </script>
+  </section>
+  
+  <!-- Secure Login Form -->
+  <section>
+    <h2>Secure Login</h2>
+    <form onsubmit="secureLogin(); return false;">
+      <label for="secUsername">Username:</label><br>
+      <input id="secUsername" type="text" placeholder="Enter username"><br>
+      <label for="secPassword">Password (DNA sequence):</label><br>
+      <input id="secPassword" type="text" placeholder="Enter DNA code"><br>
+      <button type="submit">Login</button>
+    </form>
+    <script>
+      function secureLogin() {
+        var username = document.getElementById('secUsername').value;
+        var password = document.getElementById('secPassword').value;
+        // Validate to ensure the password contains only valid DNA nucleotides.
+        if (/^[ATCG]+$/i.test(password)) {
+          // Process login without evaluating the input.
+          alert("Login successful (secure demo)!");
+        } else {
+          alert("Access denied: Invalid characters detected.");
+        }
+      }
+    </script>
+  </section>
+  
+</body>
+</html>

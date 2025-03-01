@@ -1,0 +1,18 @@
+.small-img{
+    max-width: 100%;
+
+}
+.other-img{
+    margin-top: 50px;
+    max-width: 100%;
+}
+.last-img{
+    max-width: 75%;
+    margin-top: -50px;
+    margin-left: 10%;
+}
+@media screen and (max-width:767px) {
+    .last-img{
+        margin-top: 10px;
+    }
+}
