@@ -96,11 +96,10 @@
               Our system performs multiple security checks:
             </p>
             <ol>
-              <li><strong>MIME Type Verification:</strong> The file must be a plain text file (.txt).</li>
-              <li><strong>Letter Validation:</strong> The sequence must contain only valid nucleotides (A, T, C, and G).</li>
+              <li><strong>MIME Type Verification:</strong> The file must be a an exepcted file (.txt), (.FASTA).</li>
+              <li><strong>Genomic Data Validation:</strong> The sequence must contain only valid syquences ex: (A, T, C, and G) or Binary.</li>
               <li>
-                <strong>Binary Conversion & Analysis:</strong> The sequence is converted into binary and scanned for malicious patterns ("1010101010").
-              </li>
+                <strong>Binary Conversion & Analysis:</strong> If the sequence is in binary it scans for malicious patterns ("1010101010"). </li>
             </ol>
             <div class="text-center">
               <input type="file" id="fileInput" accept=".txt" class="form-control w-75 mx-auto">

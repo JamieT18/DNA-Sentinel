@@ -136,6 +136,42 @@
         </div>
       </div>
     </section>
+    <!-- About DNA Sentinel Section -->
+<section id="about-dna-sentinel" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">About DNA Sentinel</h2>
+    <p class="lead text-center">
+      DNA Sentinel is a cutting-edge security platform designed to protect genomic data from DNA-based cyberattacks.
+      By leveraging advanced validation and binary analysis techniques, DNA Sentinel ensures that only legitimate
+      DNA sequences are processed, preventing unauthorized code injection and safeguarding sensitive information.
+    </p>
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <h3>What It Does</h3>
+        <ul>
+          <li><strong>MIME Type Verification:</strong> Accepts only approved file formats (e.g. .txt, .FASTA).</li>
+          <li><strong>Genomic Data Validation:</strong> The sequence must contain only valid syquences ex: (A, T, C, and G) or Binary.</li>
+          <li><strong>Binary Conversion & Analysis:</strong> If the sequence is in binary it scans for malicious patterns ("1010101010")</li>
+          <li><strong>Threat Neutralization:</strong> Blocks potential code injection and other cyber threats.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>How It Works</h3>
+        <p>
+          When a file is uploaded, DNA Sentinel first checks the file type to ensure it meets our strict criteria.
+          It then reads the DNA sequence and removes any extraneous characters before validating that it consists
+          solely of the nucleotides A, T, C, and G. Next, the system converts the sequence into binary using a simple
+          mapping (A → "00", T → "01", C → "10", G → "11") and scans this binary output for known malicious patterns.
+          If any irregularities are detected, the system flags the file and prevents further processing.
+        </p>
+        <p>
+          This multi-layered approach not only secures the genomic data but also ensures that any potential cyberattack
+          vectors are identified and neutralized before they can cause harm.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
     <section id="compliance" class="bg-light">
         <div class="container px-5">
           <h2 class="display-4 lh-1 mb-4 text-center">Compliance & Security Standards</h2>
